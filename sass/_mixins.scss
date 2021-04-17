@@ -1,0 +1,56 @@
+@mixin item-cover {
+  .img-wrapper {
+    position: relative;
+    margin-top: 1vw;
+
+    .img-cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 5vh;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(1px);
+      z-index: 2;
+      opacity: 0;
+      transition: opacity .5s;
+
+      &:hover {
+        opacity: 1;
+      }
+      h1, p {
+        margin: 0;
+        margin-bottom: 2vh;
+        color: white;
+        font-weight: normal;
+      }
+
+      h1 {
+        font-size: 32px;
+        font-weight: normal;
+      }
+
+      p {
+        height: calc( min(400px, 50%) );
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 40px;
+        overflow-y: hidden;
+      }
+
+      a {
+        display: block;
+        height: 5vh;
+        width: 100;
+        border: none;
+        font-size: 24px;
+        line-height: 5vh;
+        text-decoration: none;
+      }
+    }
+
+    img {
+      z-index: 1;
+      width: 100%;
+    }
+  }
+}

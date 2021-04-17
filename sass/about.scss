@@ -1,0 +1,100 @@
+@import "base";
+
+#main-content__about-img {
+  grid-column: col-start / span 5;
+  margin: auto;
+  width: 100%;
+  height: 717px;
+  min-height: 70vh;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 1) .1vw,
+    rgba(0, 0, 0, 0) 20vw
+  ),
+  url(../assets/images/chopog.jpg) no-repeat;
+  background-size: cover;
+}
+
+#main-content__about-description {
+  position: relative;
+  grid-column: 8 / span 6;
+  display: flex;
+  flex-flow: column nowrap;
+  color: $normalText;
+
+  #main-content__about-header {
+    margin-bottom: 1.25rem;
+    font-size: 3rem;
+  }
+
+  #main-content__about-paragraph {
+    margin-bottom: 3rem;
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 3.12rem;
+  }
+
+  a {
+    margin-top: auto;
+    width: 50%;
+    min-width: 250px;
+    padding: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: normal;
+
+    &:hover {
+      background: $normalText;
+      border-color: $normalText;
+      color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #main-content__about-img {
+    display: none;
+    grid-column: col-start / span 12;
+    object-fit: cover;
+    object-position: top;
+    max-width: 70vw;
+    height: 60vh;
+    min-height: 40vh;
+    background-image: linear-gradient(
+        360deg,
+        rgba(255, 255, 255, 1) 8%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      url(../assets/images/chopog.jpg);
+  }
+
+  #main-content__about-description {
+    grid-column: col-start / span 12;
+
+    a {
+      margin-top: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main-content__about-img {
+    grid-column: col-start / span 6;
+  }
+
+  #main-content__about-description {
+    grid-column: col-start / span 6;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main-content__about-img {
+    grid-column: col-start / span 4;
+    height: 50vh;
+    max-width: none;
+  }
+
+  #main-content__about-description {
+    grid-column: col-start / span 4;
+  }
+}

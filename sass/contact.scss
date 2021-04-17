@@ -1,0 +1,152 @@
+@import "base";
+
+#main-content__contact-img {
+  grid-column: col-start / span 5;
+  margin: auto;
+  width: 100%;
+  height: 717px;
+  min-height: 70vh;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 1) .1vw,
+    rgba(0, 0, 0, 0) 20vw
+  ),
+  url(../assets/images/chopog.jpg) no-repeat;
+  background-size: cover;
+}
+
+#main-content__contact-form-container {
+  grid-column: 8 / span 6;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  #main-content__contact-header {
+    margin-bottom: 20px;
+    font-size: 3rem;
+  }
+
+  #main-content__contact-form {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+  }
+
+  #main-content__contact-form-names {
+    display: flex;
+
+    div {
+      width: 50%;
+    }
+
+    .main-content__contact-form__name {
+      width: 90%;
+      padding: 10px;
+      font-family: "Amaranth";
+      color: $normalText;
+    }
+
+    label {
+      margin: 0;
+    }
+  }
+
+  #main-content__contact-form__message {
+    min-height: 200px;
+  }
+
+  label {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  input,
+  textarea {
+    display: block;
+    width: 95%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid $normalGrey;
+    border-radius: 0;
+    color: $normalText;
+    font-size: 1.5rem;
+    letter-spacing: .06rem;
+    font-weight: bold;
+    font-family: "Amaranth";
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    width: 50%;
+    min-width: 250px;
+    margin-top: 50px;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: "Amaranth";
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #main-content__contact-img {
+    display: none;
+    grid-column: col-start / span 12;
+    object-fit: cover;
+    object-position: top;
+    max-width: 70vw;
+    height: 60vh;
+    min-height: 40vh;
+    background-image: linear-gradient(
+        360deg,
+        rgba(255, 255, 255, 1) 8%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      url(../assets/images/chopog.jpg);
+  }
+
+  #main-content__contact-form-container {
+    grid-column: col-start / span 12;
+
+    
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main-content__contact-img {
+    grid-column: col-start / span 6;
+  }
+
+  #main-content__contact-form-container {
+    grid-column: col-start / span 6;
+
+    #main-content__contact-form-names {
+      flex-flow: column nowrap;
+
+      div {
+        width: 95%;
+      }
+      
+      .main-content__contact-form__name {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main-content__contact-img {
+    grid-column: col-start / span 4;
+    height: 50vh;
+    max-width: none;
+  }
+
+  #main-content__contact-form-container {
+    grid-column: col-start / span 4;
+  }
+}

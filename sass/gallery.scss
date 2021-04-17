@@ -1,0 +1,123 @@
+@import "base";
+@import "mixins";
+
+#main-content__gallery-header {
+  grid-column: col-start / span 12;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 3rem;
+
+  #main-content__gallery-header-text {
+    flex-grow: 1;
+    width: 35%;
+  }
+
+  #main-content__gallery-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    flex-grow: 1;
+    width: 65%;
+
+    .main-content__gallery-menu__button {
+      width: calc( max(20%, 8ch) );
+      border: 3px $normalText solid;
+      line-height: 3rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  #main-content__gallery-select {
+    display: none;
+    width: 40%;
+    height: 80%;
+    font-size: 1.5rem;
+  }
+}
+
+#main-content__gallery-container {
+  grid-column: col-start / span 12;
+
+  #main-content__gallery-row {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    gap: 1vw;
+
+    .main-content__gallery-column {
+      display: flex;
+      flex-flow: column nowrap;
+      flex: 32%;
+      max-width: 33%;
+
+      @include item-cover;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main-content__gallery-header {
+    grid-column: col-start / span 6;
+  
+    #main-content__gallery-menu {
+      display: none
+    }
+
+    #main-content__gallery-select {
+      display: block;
+    }
+  }
+
+  #main-content__gallery-container {
+    grid-column: col-start / span 6;
+  }
+
+  #main-content__gallery-container {
+    grid-column: col-start / span 6;
+  
+    #main-content__gallery-row {
+      .main-content__gallery-column {
+        flex: 49%;
+        max-width: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main-content__gallery-header {
+    grid-column: col-start / span 4;
+  }
+
+  #main-content__gallery-container {
+    grid-column: col-start / span 4;
+  }
+
+  #main-content__gallery-container {
+    grid-column: col-start / span 4;
+  
+    #main-content__gallery-row {
+      .main-content__gallery-column {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes clicked {
+  from {
+    background: white;
+    border-color: $normalText;
+    color: $normalText;
+  }
+  to {
+    background: $normalText;
+    border-color: $normalText;
+    color: $lightText;
+  }
+}

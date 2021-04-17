@@ -1,0 +1,138 @@
+@import "base";
+
+#main-content__item-container {
+  position: relative;
+  grid-column: col-start / span 5;
+  margin: 0 auto;
+  width: 100%;
+  height: 35vw;
+  min-height: 500px;
+  background: rgba(200, 200, 200, .1);
+  box-shadow: 0px 0px 2rem 1.5rem rgba(200, 200, 200, .1);
+
+  #main-content__item-img {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  #main-content__item-selector {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    transition: all .2s;
+
+    div {
+      width: 15px;
+      height: 15px;
+      background: none;
+      border: 3px solid $normalText;
+      border-radius: 100%;
+    }
+
+    .active-item {
+      animation: clicked .2s linear 0s 1 forwards alternate;
+    }
+  }
+}
+
+#main-content__item-details {
+  grid-column: 8 / span 6;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+
+  #main-content__item-title {
+    font-size: 3rem;
+  }
+
+  #main-content__item-subtitle {
+    font-size: 1.5rem;
+    color: $normalGrey;
+  }
+
+  #main-content__item-price {
+    margin-top: .5rem;
+    font-size: 3rem;
+    color: $normalText;
+  }
+
+  #main-content__add-to-cart {
+    margin-top: auto;
+    width: 50%;
+    min-width: 200px;
+    padding: 10px;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  #main-content__item-description-header {
+    margin-top: 2rem;
+    font-size: 1.75rem;
+  }
+
+  #main-content__item-description {
+    margin-bottom: 2rem;
+    width: 100%;
+    color: $normalText;
+    font-size: 1rem;
+    line-height: 2rem;
+    letter-spacing: .03rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #main-content__item-container {
+    grid-column: 2 / span 12;
+    margin-bottom: 10vh;
+    height: 50vw;
+    min-height: 500px;
+  }
+
+  #main-content__item-details {
+    grid-column: 3 / span 11;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main-content__item-container {
+    grid-column: col-start / span 6;
+    height: 70vw;
+    min-height: 200px;
+  }
+
+  #main-content__item-details {
+    grid-column: col-start / span 6;
+
+
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main-content__item-container {
+    grid-column: col-start / span 4;
+    height: 100vw;
+    min-height: 200px;
+  }
+
+  #main-content__item-details {
+    grid-column: col-start / span 4;
+
+
+  }
+}
+
+@keyframes clicked {
+  from {
+    background: white;
+  }
+  to {
+    background: $normalText;
+  }
+}
