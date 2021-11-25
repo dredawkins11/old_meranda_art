@@ -384,8 +384,8 @@ body {
   width: 100%;
   height: 717px;
   min-height: 70vh;
-  background: -webkit-gradient(linear, right top, left top, color-stop(0.1vw, white), color-stop(20vw, rgba(0, 0, 0, 0))), url(../assets/images/chopog.jpg) no-repeat;
-  background: linear-gradient(270deg, white 0.1vw, rgba(0, 0, 0, 0) 20vw), url(../assets/images/chopog.jpg) no-repeat;
+  background: -webkit-gradient(linear, right top, left top, color-stop(0.1vw, white), color-stop(20vw, rgba(0, 0, 0, 0))), url(../assets/images/painter.jpg) no-repeat;
+  background: linear-gradient(270deg, white 0.1vw, rgba(0, 0, 0, 0) 20vw), url(../assets/images/painter.jpg) no-repeat;
   background-size: cover;
 }
 
